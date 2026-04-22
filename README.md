@@ -7,6 +7,7 @@ A small static blog generator that reads Markdown files from `content/articles` 
 - Blog title at the top.
 - Round logo on the left of the top bar.
 - Scrollable feed of articles.
+- Clickable feed cards that open dedicated article pages.
 - Markdown + frontmatter support.
 
 ## Structure
@@ -16,6 +17,8 @@ A small static blog generator that reads Markdown files from `content/articles` 
 - `src/styles.css`: site styles
 - `src/assets/logo.svg`: default round logo
 - `docs/`: generated website output for GitHub Pages
+	- `docs/index.html`: article feed page
+	- `docs/articles/<slug>/index.html`: individual article page
 
 ## Article format
 
