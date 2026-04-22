@@ -1,84 +1,53 @@
-# Simple Blog (GitHub Pages)
+# Jekyll Blog With Minima
 
-A small static blog generator that reads Markdown files from `content/articles` and builds a GitHub Pages-ready website into `docs`.
-
-## Features
-
-- Blog title at the top.
-- Round logo on the left of the top bar.
-- Scrollable feed of articles.
-- Clickable feed cards that open dedicated article pages.
-- Markdown + frontmatter support.
+This project now uses Jekyll with the Minima theme.
 
 ## Structure
 
-- `content/articles/*.md`: your articles
-- `scripts/build.mjs`: build script
-- `src/styles.css`: site styles
-- `src/assets/logo.svg`: default round logo
-- `docs/`: generated website output for GitHub Pages
-	- `docs/index.html`: article feed page
-	- `docs/articles/<slug>/index.html`: individual article page
+- `_config.yml`: Jekyll site config
+- `_posts/*.md`: blog articles
+- `index.md`: homepage using Minima home layout
+- `assets/logo.svg`: logo asset
 
-## Article format
+## Writing Articles
 
-Each article is a Markdown file with optional frontmatter:
+Create files in `_posts` named like:
+
+`YYYY-MM-DD-title.md`
+
+Example:
 
 ```md
 ---
+layout: post
 title: "My Article"
-date: "2026-04-22"
-summary: "Short summary"
+date: 2026-04-22
 ---
 
-# Heading
-
-Your content...
+Your Markdown content here.
 ```
 
-If `title` is omitted, the filename is used. If `date` is omitted, today is used.
+## Local Run (Optional)
 
-## Build
+If you have Ruby/Bundler installed:
 
 ```bash
-npm install
-npm run build
+bundle install
+bundle exec jekyll serve
 ```
 
-Build using conda helper (env defaults to `blog-site`):
+Then open `http://127.0.0.1:4000/blog/`.
 
-```bash
-npm run build:conda
-```
+## GitHub Pages Setup
 
-Optional: build with a different conda environment name:
+1. Push your repository to GitHub.
+2. Open Settings -> Pages.
+3. Under Build and deployment:
+   - Source: Deploy from a branch
+   - Branch: `main`
+   - Folder: `/ (root)`
+4. Save.
 
-```bash
-bash scripts/build-conda.sh my-other-env
-```
+Your site URL is expected at:
 
-## Publish To GitHub Pages
-
-1. Create a GitHub repository and connect this folder to it (if not already):
-
-```bash
-git init
-git add .
-git commit -m "Initial blog site"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo>.git
-git push -u origin main
-```
-
-2. Open GitHub -> your repo -> Settings -> Pages.
-3. Under "Build and deployment", choose:
-	- Source: "Deploy from a branch"
-	- Branch: `main`
-	- Folder: `/docs`
-4. Save and wait for deployment.
-5. Your site URL will be:
-	- `https://<your-username>.github.io/<your-repo>/`
-
-If your repository is named `<your-username>.github.io`, then your site URL is:
-
-- `https://<your-username>.github.io/`
+- `https://cloningon100try.github.io/blog/`

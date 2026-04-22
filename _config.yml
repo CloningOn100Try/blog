@@ -1,0 +1,16 @@
+title: CloningOn100Try Blog
+description: Personal notes and articles
+baseurl: "/blog"
+url: "https://cloningon100try.github.io"
+
+theme: minima
+
+minima:
+  skin: classic
+  show_excerpts: true
+
+author:
+  name: CloningOn100Try
+
+plugins:
+  - jekyll-feed
