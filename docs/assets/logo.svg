@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Default blog logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#28594c"/>
+      <stop offset="100%" stop-color="#8bb9a7"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="98" fill="url(#g)"/>
+  <circle cx="100" cy="100" r="78" fill="none" stroke="#d9ebe5" stroke-width="6"/>
+  <text x="100" y="113" text-anchor="middle" font-size="54" font-family="Georgia, serif" fill="#f4fbf8">B</text>
+</svg>

@@ -1,0 +1,158 @@
+:root {
+  --bg: #f3f0e8;
+  --panel: #fffdf8;
+  --text: #1f1f1f;
+  --muted: #6a665f;
+  --accent: #1e5f4d;
+  --accent-soft: #dcebe5;
+  --border: #dfd9cc;
+  --shadow: 0 14px 40px rgba(35, 24, 14, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% -10%, #e9efe0 0%, transparent 40%),
+    radial-gradient(circle at 85% 0%, #efe5d9 0%, transparent 35%),
+    var(--bg);
+  font-family: "Source Serif 4", "Georgia", serif;
+}
+
+.site-shell {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in hsl, var(--panel) 92%, white 8%);
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #c9d8cf;
+  object-fit: cover;
+  background: #f7fbf8;
+  flex-shrink: 0;
+}
+
+.blog-title {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  letter-spacing: 0.02em;
+}
+
+.feed-wrap {
+  padding: 18px;
+}
+
+.feed {
+  margin: 0 auto;
+  max-width: 900px;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.article-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 18px;
+  margin: 0 0 16px;
+  animation: rise 520ms ease both;
+}
+
+.article-card h2 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.article-meta {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.article-content :is(h1, h2, h3) {
+  margin-top: 1.1em;
+}
+
+.article-content p {
+  line-height: 1.65;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+
+.article-content pre {
+  overflow-x: auto;
+  border-radius: 12px;
+  padding: 12px;
+  background: #202020;
+  color: #f4f4f4;
+}
+
+.article-content code {
+  font-family: "JetBrains Mono", "Menlo", monospace;
+}
+
+.empty {
+  background: var(--panel);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  color: var(--muted);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    padding: 12px 14px;
+  }
+
+  .logo {
+    width: 46px;
+    height: 46px;
+  }
+
+  .feed-wrap {
+    padding: 10px;
+  }
+
+  .feed {
+    height: calc(100vh - 96px);
+  }
+}
